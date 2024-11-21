@@ -9,7 +9,7 @@ const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 
 // CORS middleware: Allows Cross-Origin Resource Sharing, enabling requests from different domains.
 app.use(cors({
-  origin: "https://github.com/n3hx/test-front-end", // change this https://github.com/n3hx/n3hx.github.io
+  origin: "https://n3hx.github.io/test-front-end/", // change this https://github.com/n3hx/n3hx.github.io
   methods: "GET,POST,PUT,DELETE",
   allowedHeaders: "Content-Type"
 }));

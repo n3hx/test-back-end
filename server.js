@@ -107,11 +107,6 @@ app.get("/lessons/:id", async (req, res) => {
   }
 });
 
-// Serve index.html file
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
-});
-
 // Add a new lesson
 app.post("/lessons", async (req, res) => {
   try {

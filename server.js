@@ -8,7 +8,11 @@ const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 // Middleware setup
 
 // CORS middleware: Allows Cross-Origin Resource Sharing, enabling requests from different domains.
-app.use(cors());
+app.use(cors({
+  origin: "https://github.com/n3hx/test-front-end", // change this https://github.com/n3hx/n3hx.github.io
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "Content-Type"
+}));
 
 // JSON parser middleware: Parses incoming JSON payloads into `req.body`.
 app.use(express.json());
@@ -208,6 +212,7 @@ app.use((err, req, res, next) => {
 });
 
 // Start the server
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log("Server is running on port ${PORT}");
 });
